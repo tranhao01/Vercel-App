@@ -1,11 +1,17 @@
 {
+
+  "version": 2,
+
   "routes": [
-    { "src": "/terms", "dest": "/terms/terms.html" },
-    { "src": "/privacy", "dest": "/privacy/privacy.html" },
-    { "src": "/tiktokQFxEv7yDhy9qAAd7NJrQk2qnNvZSZBle.txt", "dest": "/terms/tiktokQFxEv7yDhy9qAAd7NJrQk2qnNvZSZBle.txt" },
-    { "src": "/terms.html/tiktokQFxEv7yDhy9qAAd7NJrQk2qnNvZSZBle.txt", "dest": "/terms/tiktokQFxEv7yDhy9qAAd7NJrQk2qnNvZSZBle.txt" },
-    { "src": "/tiktok7XSq4J7OKebE3X8FQO4yZJi5xUtVvowB.txt", "dest": "/privacy/tiktok7XSq4J7OKebE3X8FQO4yZJi5xUtVvowB.txt" },
-    { "src": "/privacy.html/tiktok7XSq4J7OKebE3X8FQO4yZJi5xUtVvowB.txt", "dest": "/privacy/tiktok7XSq4J7OKebE3X8FQO4yZJi5xUtVvowB.txt" },
-    { "src": "/", "dest": "/index.html" }
+
+    { "src": "/privacy(?:\\.html)?/?$", "dest": "/legal/privacy/" },
+
+    { "src": "/terms(?:\\.html)?/?$", "dest": "/legal/terms/" },
+
+    { "src": "/privacy\\.html/(.*)", "dest": "/legal/privacy/$1" },
+
+    { "src": "/terms\\.html/(.*)", "dest": "/legal/terms/$1" }
+
   ]
+
 }
