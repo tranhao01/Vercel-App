@@ -4,6 +4,8 @@
     { "src": "/privacy", "dest": "/privacy/privacy.html" },
     { "src": "/tiktokQFxEv7yDhy9qAAd7NJrQk2qnNvZSZBle.txt", "dest": "/terms/tiktokQFxEv7yDhy9qAAd7NJrQk2qnNvZSZBle.txt" },
     { "src": "/terms.html/tiktokQFxEv7yDhy9qAAd7NJrQk2qnNvZSZBle.txt", "dest": "/terms/tiktokQFxEv7yDhy9qAAd7NJrQk2qnNvZSZBle.txt" },
+    { "src": "/tiktok7XSq4J7OKebE3X8FQO4yZJi5xUtVvowB.txt", "dest": "/privacy/tiktok7XSq4J7OKebE3X8FQO4yZJi5xUtVvowB.txt" },
+    { "src": "/privacy.html/tiktok7XSq4J7OKebE3X8FQO4yZJi5xUtVvowB.txt", "dest": "/privacy/tiktok7XSq4J7OKebE3X8FQO4yZJi5xUtVvowB.txt" },
     { "src": "/", "dest": "/index.html" }
   ]
 }
