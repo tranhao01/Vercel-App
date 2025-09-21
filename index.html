@@ -25,9 +25,13 @@
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        nav a {
-            margin: 0 0.5rem;
+        .footer-links {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .footer-links a {
             transition: color 0.3s ease;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -38,10 +42,9 @@
             <h2>Your reliable solution for seamless automation.</h2>
         </hgroup>
         <p>Built with a decade of expertise in engineering and design, Auto Tool provides a robust and intuitive experience.</p>
-        <nav>
-            <a href="/terms.html">Terms of Service</a> • 
-            <a href="/privacy.html">Privacy Policy</a>
-        </nav>
+        <div class="footer-links">
+            <p>By using our service, you agree to our <a href="/terms.html">Terms of Service</a> and <a href="/privacy.html">Privacy Policy</a>.</p>
+        </div>
     </main>
 </body>
 </html>
