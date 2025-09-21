@@ -1,151 +1,50 @@
+Ok, thấy repo đã có `index.html / privacy.html / terms.html / vercel.json`. Lỗi 404 thường do **cấu hình build/static** chưa đúng. Làm 1 trong 2 cách dưới đây (cách 1 nhanh nhất):
 
-kiểm tra xem term như này đủ dể deploy lên github và thực hiện link xác minh cho app này chưa
+### Cách 1 — Không cần cấu hình (khuyến nghị)
 
+1. Vào Vercel → **Project → Settings → General**
 
+   * **Framework Preset:** `Other`
+   * **Build Command:** *để trống*
+   * **Output Directory:** `.` (hoặc để trống)
+   * **Root Directory:** repository root (nơi có các file .html)
+2. **Xoá `vercel.json`** trong repo (nếu đang ghi đè cấu hình).
+3. Commit & redeploy.
+4. Truy cập:
 
-TikTok for Developers
+   * `/privacy.html`
+   * `/terms.html`
+   * (tuỳ chọn) `/` sẽ là `index.html`.
 
-Products
-Docs
-Support
-Events
-Blog
-Open Innovation
+### Cách 2 — Giữ `vercel.json` nhưng cấu hình chuẩn static
 
-Developer Portal
+Dùng file tối giản sau (ghi đè file hiện tại), rồi commit & redeploy:
 
+```json
+{
+  "version": 2,
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "privacy.html", "use": "@vercel/static" },
+    { "src": "terms.html", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/privacy/?", "dest": "/privacy.html" },
+    { "src": "/terms/?", "dest": "/terms.html" }
+  ]
+}
+```
 
-Auto Tool
+Giải thích: ép Vercel serve ba file HTML như static assets và map đường dẫn ngắn `/privacy` → `/privacy.html`, `/terms` → `/terms.html`.
 
-Production
-Sandbox
+---
 
-URL properties
+### Checklist nhanh để hết 404
 
+* [ ] Project dùng **Other (Static)**, **không** có Build Command.
+* [ ] **Output Directory** trỏ đúng (thư mục chứa các .html).
+* [ ] Không có framework config thừa (Next/React) gây build rỗng.
+* [ ] Redeploy sau khi sửa.
+* [ ] Thử mở thẳng các URL: `https://<project>.vercel.app/privacy.html` và `.../terms.html`.
 
-Production
-
-
-Draft
-App details
-Credentials
-
-Basic information
-
-App review
-Products
-Scopes
-
-Import
-This form has 1 error.
-Review
-
-Save
-
-Submit for review
-App details
-
-Credentials
-Client key
-•••••••••••••••••
-Client secret
-•••••••••••••••••
-
-Basic information
-App icon *
-This will be displayed publicly to TikTok users.
-Requirements:
-1024px x 1024px
-Up to 5MB
-JPEG, JPG, or PNG formats
-App name *
-This will be displayed to TikTok users
-Auto Tool
-9 / 50
-Category *
-
-Business
-Description *
-Describe what your website or mobile app does and how it works. This will be displayed to TikTok users.
-Examples:
-A website that sells pet supplies.
-Manage all your social media content in one place.
-App titkok tool
-15 / 120
-Terms of Service URL *
-Link to your app or website's official Terms of Service
-Privacy Policy URL *
-Link to your app or website's official privacy policy
-Platforms *
-
-Web
-
-Desktop
-
-Android
-
-iOS
-Please select at least one platform
-App review
-
-Required information for app submission
-Please review the App Review Guidelines for more details.
-Explain how each product and scope works within your app or website. If submitting a revision, include the changes in this version. *
-0 / 1000
-Upload at least one demo video that shows the complete end-to-end flow of the integration with TikTok. *
-
-Upload
-Accepted formats: mp4, mov
-Maximum 5 files, up to 50MB each
-For example, it should demonstrate how you use TikTok for Developers' capabilities, such as Login Kit, Share Kit, Display API, Content Posting API, and the relevant scopes.
-If your app has not been approved before, you are required to use a sandbox environment on the Developer Portal to demonstrate the integration.
-The demo video should showcase the website or app where the features will actually be integrated.
-All selected products and scopes must be clearly demonstrated in the video. If you don't need certain products or scopes, make sure to remove them before review. Otherwise, it will delay the review result.
-The video should clearly show the user interface and user interactions.
-If you intend to integrate with a web app, make sure the domain of the website shown in the demo video matches the website URL you provide.
-If you intend to integrate with a mobile app, the demo video should start by showing the app being opened.
-Products
-
-Add products
-Scopes
-
-No scopes yet. Add scopes to configure permissions.
-
-Add scopes
-History
-
-Changelog
-
-Review comments
-
-All
-TikTok for Developers
-Products
-Share Kit
-Login Kit
-Content Posting API
-Research API
-Display API
-Embed Videos
-Data Portability API
-Green Screen Kit
-Commercial Content API
-Other platforms
-TikTok Embeds
-TikTok for Business
-Advertise on TikTok
-TikTok Creative Center
-TikTok.com
-Company
-About TikTok
-Newsroom
-Contact
-Careers
-ByteDance
-Transparency Center
-© 2025 TikTok
-Terms of Service
-Privacy Policy
-Resources & Legal
-
-
+Nếu vẫn 404, gửi mình nội dung `vercel.json` hiện tại + tên project Vercel, mình chỉnh đúng luôn cho bạn.

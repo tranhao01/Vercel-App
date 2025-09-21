@@ -1,20 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auto Tool Legal</title>
-<style>
-  body {font-family: Arial, sans-serif; margin: 2rem; line-height:1.6;}
-  h1 {color:#333;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Tool - Welcome</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--pico-secondary-background);
+        }
+        main.container {
+            text-align: center;
+            padding: 2rem;
+            border-radius: var(--pico-border-radius);
+            background-color: var(--pico-primary-background);
+            box-shadow: var(--pico-card-box-shadow);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        nav a {
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+    </style>
 </head>
 <body>
-  <h1>Auto Tool</h1>
-  <p>Welcome to Auto Tool. Please review our policies:</p>
-  <ul>
-    <li><a href="/privacy">Privacy Policy</a></li>
-    <li><a href="/terms">Terms of Service</a></li>
-  </ul>
+    <main class="container">
+        <hgroup>
+            <h1>Welcome to Auto Tool</h1>
+            <h2>Your reliable solution for seamless automation.</h2>
+        </hgroup>
+        <p>Built with a decade of expertise in engineering and design, Auto Tool provides a robust and intuitive experience.</p>
+        <nav>
+            <a href="/terms.html">Terms of Service</a> • 
+            <a href="/privacy.html">Privacy Policy</a>
+        </nav>
+    </main>
 </body>
 </html>
