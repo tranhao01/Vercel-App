@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>TikTok Login – Callback</title>
+<script>
+  // Parse ?code=&state= from URL
+  const params = new URLSearchParams(location.search);
+  const code = params.get("code");
+  const state = params.get("state");
+  // (Optional) gửi code lên serverless API để đổi token
+  async function exchange() {
+    if (!code) { document.body.innerText = "Missing code"; return; }
+    try {
+      const res = await fetch("/api/tiktok/callback", {
+        method: "POST",
+        headers: {"content-type":"application/json"},
+        body: JSON.stringify({ code, state })
+      });
+      const data = await res.json();
+      document.body.innerText = res.ok ? "Login success! You can close this tab." :
+                                         "Login failed: " + (data.error || res.statusText);
+    } catch (e) {
+      document.body.innerText = "Network error";
+    }
+  }
+  exchange();
+</script>
+<body>Processing TikTok login…</body>
+</html>
