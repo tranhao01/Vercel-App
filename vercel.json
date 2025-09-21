@@ -2,6 +2,8 @@
   "routes": [
     { "src": "/terms", "dest": "/terms/terms.html" },
     { "src": "/privacy", "dest": "/privacy/privacy.html" },
+    { "src": "/tiktokQFxEv7yDhy9qAAd7NJrQk2qnNvZSZBle.txt", "dest": "/terms/tiktokQFxEv7yDhy9qAAd7NJrQk2qnNvZSZBle.txt" },
+    { "src": "/terms.html/tiktokQFxEv7yDhy9qAAd7NJrQk2qnNvZSZBle.txt", "dest": "/terms/tiktokQFxEv7yDhy9qAAd7NJrQk2qnNvZSZBle.txt" },
     { "src": "/", "dest": "/index.html" }
   ]
 }
