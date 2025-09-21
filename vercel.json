@@ -4,6 +4,8 @@
 
   "routes": [
 
+    { "src": "/auth/callback", "dest": "/auth/callback/" },
+
     { "src": "/privacy(?:\\.html)?/?$", "dest": "/legal/privacy/" },
 
     { "src": "/terms(?:\\.html)?/?$", "dest": "/legal/terms/" },
